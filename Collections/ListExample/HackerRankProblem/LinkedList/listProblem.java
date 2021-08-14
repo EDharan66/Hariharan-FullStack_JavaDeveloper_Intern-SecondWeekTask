@@ -11,8 +11,8 @@ public class listProblem {
         sc.nextLine();
         LinkedList linkedList = new LinkedList(Arrays.asList(sc.nextLine().split("\\s")));
 
-//        System.out.println("linkedList = " + linkedList);
-//        System.out.println("No of operations");
+        System.out.println("linkedList = " + linkedList);
+        System.out.println("No of operations");
         int noOfOperations = sc.nextInt();
 
 
@@ -21,7 +21,7 @@ public class listProblem {
             String operation = sc.nextLine();
             if(operation.equals("Insert")){
                 int index = sc.nextInt();
-                if(sc.hasNext()){
+                if(sc.hasNextInt()){
                     linkedList.add(index,sc.nextInt());
                 }else {
                     linkedList.add(index);

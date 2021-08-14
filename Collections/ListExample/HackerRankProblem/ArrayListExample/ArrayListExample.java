@@ -10,23 +10,23 @@ public class ArrayListExample {
 
         Scanner sc = new Scanner(System.in);
 
-        //System.out.println("How many list value you enter : ");
+        System.out.println("How many list value you enter : ");
         int lists = sc.nextInt();
         sc.nextLine();
 
         ArrayList<List<String>> sublist = new ArrayList<>();
         List<String> answerList = new ArrayList<String>();
 
-        //System.out.println("Now you enter the lists " + lists);
+        System.out.println("Now you enter the lists " + lists);
         for (int i = 0; i < lists; i++) {
 
             if(sc.hasNextLine()){
                 sublist.add(Arrays.asList(sc.nextLine().split("\\s")));
             }
         }
-//        System.out.println("sublist = " + sublist);
-//
-//        System.out.println("verify lists ");
+        System.out.println("sublist = " + sublist);
+
+        System.out.println("verify lists ");
 
         int verifyCount = sc.nextInt();
         sc.nextLine();
@@ -48,3 +48,9 @@ public class ArrayListExample {
     }
 
 }
+
+//        5 41 77 74 22 44
+//        1 12
+//        4 37 34 36 52
+//        0
+//        3 20 22 33
