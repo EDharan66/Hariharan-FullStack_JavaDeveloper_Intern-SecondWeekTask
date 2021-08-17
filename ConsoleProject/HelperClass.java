@@ -1,6 +1,7 @@
 
 import java.io.*;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class HelperClass {
@@ -27,7 +28,11 @@ public class HelperClass {
 
         if (checkData().equals(true)) {
             info.put(mailId, new DataInfo(empId, phone, mailId, name));
-            System.out.println(info);
+//            System.out.println(info);
+
+            for (Map.Entry entry : info.entrySet()){
+                System.out.println("key = " + entry.getKey()+" Value = "+ entry.getValue() );
+            }
             serialize();
         } else {
             System.out.println("first data!");
@@ -68,7 +73,11 @@ public class HelperClass {
     public String showData() {
 
         if (checkData().equals(true)) {
-            System.out.println("Deserialize HashMap " + this.info);
+//            System.out.println("Deserialize HashMap " + this.info);
+
+            for (Map.Entry entry : info.entrySet()){
+                System.out.println("key = " + entry.getKey()+" Value = "+ entry.getValue() );
+            }
             return "complete";
         } else {
             return "empty file!";
@@ -252,8 +261,12 @@ public class HelperClass {
             System.out.println("Enter the mail id for which data will be delete :");
             String enteredMailId = sc.nextLine();
             info.remove(enteredMailId);
-            System.out.println(info);
+//            System.out.println(info);
             serialize();
+
+            for (Map.Entry entry : info.entrySet()){
+                System.out.println("key = " + entry.getKey()+" Value = "+ entry.getValue() );
+            }
 
         } else {
             System.out.println("No data is available! please store the data first");

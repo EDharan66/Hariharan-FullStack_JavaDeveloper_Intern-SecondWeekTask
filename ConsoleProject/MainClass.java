@@ -5,10 +5,10 @@ public class MainClass {
 
         Scanner sc = new Scanner(System.in);
         HelperClass obj = new HelperClass();
-        int x=0;
+        Boolean bool = true;
         int option;
 
-        while (x!=-1){
+        while (bool.equals(true)){
             System.out.println("Contact info storage");
             System.out.println("====================");
             System.out.println("choose the option!");
@@ -38,12 +38,15 @@ public class MainClass {
                     System.out.println(obj.deleteData());
                     break;
                 case 6 :
-                    x=-1;
+                    System.exit(0);
                     break;
                 default :
                     System.out.println("Your option was not correct! please enter correctly");
                     break;
             }
+
+            System.out.println("Do you want continue! enter \"true\" or \"false\"");
+            bool = sc.nextBoolean();
 
         }
 
