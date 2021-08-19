@@ -4,7 +4,7 @@ public class MainClass {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        HelperClass obj = new HelperClass();
+        DataOperation obj = new HelperClass();
         Boolean bool = true;
         int option;
 

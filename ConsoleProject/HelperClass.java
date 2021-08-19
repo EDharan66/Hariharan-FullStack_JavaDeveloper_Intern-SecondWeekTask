@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class HelperClass {
+public class HelperClass implements DataOperation {
     int empId;
     Long phone;
     String mailId;
@@ -13,34 +13,6 @@ public class HelperClass {
     HashMap<String, DataInfo> info = new HashMap<String, DataInfo>();
 
     Scanner sc = new Scanner(System.in);
-
-    public String storeData() {
-
-        System.out.println("Enter your Mail Id : ");
-        this.mailId = sc.nextLine();
-        System.out.println("Enter your name : ");
-        this.name = sc.nextLine();
-        System.out.println("Enter your emp Id : ");
-        this.empId = sc.nextInt();
-        System.out.println("Enter your phone no : ");
-        this.phone = sc.nextLong();
-        sc.nextLine();
-
-        if (checkData().equals(true)) {
-            info.put(mailId, new DataInfo(empId, phone, mailId, name));
-//            System.out.println(info);
-
-            for (Map.Entry entry : info.entrySet()){
-                System.out.println("key = " + entry.getKey()+" Value = "+ entry.getValue() );
-            }
-            serialize();
-        } else {
-            System.out.println("first data!");
-            serialize();
-        }
-
-        return "Storage is complete";
-    }
 
     public Boolean checkData() {
         try {
@@ -69,7 +41,36 @@ public class HelperClass {
 
     }
 
+    @Override
+    public String storeData() {
 
+        System.out.println("Enter your Mail Id : ");
+        this.mailId = sc.nextLine();
+        System.out.println("Enter your name : ");
+        this.name = sc.nextLine();
+        System.out.println("Enter your emp Id : ");
+        this.empId = sc.nextInt();
+        System.out.println("Enter your phone no : ");
+        this.phone = sc.nextLong();
+        sc.nextLine();
+
+        if (checkData().equals(true)) {
+            info.put(mailId, new DataInfo(empId, phone, mailId, name));
+//            System.out.println(info);
+
+            for (Map.Entry entry : info.entrySet()){
+                System.out.println("key = " + entry.getKey()+" Value = "+ entry.getValue() );
+            }
+            serialize();
+        } else {
+            System.out.println("first data!");
+            serialize();
+        }
+
+        return "Storage is complete";
+    }
+
+    @Override
     public String showData() {
 
         if (checkData().equals(true)) {
@@ -84,6 +85,7 @@ public class HelperClass {
         }
     }
 
+    @Override
     public String searchData() {
 
         if (checkData().equals(true)) {
@@ -163,7 +165,7 @@ public class HelperClass {
         return "search data complete";
     }
 
-
+    @Override
     public String updateData() {
 
         if (checkData().equals(true)) {
@@ -256,6 +258,7 @@ public class HelperClass {
         return "update completed";
     }
 
+    @Override
     public String deleteData() {
         if (checkData().equals(true)) {
             System.out.println("Enter the mail id for which data will be delete :");
@@ -274,6 +277,7 @@ public class HelperClass {
         return "data deleted";
     }
 }
+
 
 class DataInfo implements Serializable {
     int empId;
