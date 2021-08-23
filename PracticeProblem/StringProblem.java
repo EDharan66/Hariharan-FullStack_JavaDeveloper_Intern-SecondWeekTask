@@ -6,8 +6,8 @@ public class StringProblem {
     public static void main(String[] args) {
 
         //isPalindrome();
-        isAnagram();
-
+        //isAnagram();
+        System.out.println(System.getProperty("os.name"));
 //        geeksforgeeks
 //        forgeeksgeeks
 
