@@ -8,4 +8,6 @@ public interface DataOperation {
     String updateData();
 
     String deleteData();
+
+    String forWhat(String forWhat);
 }

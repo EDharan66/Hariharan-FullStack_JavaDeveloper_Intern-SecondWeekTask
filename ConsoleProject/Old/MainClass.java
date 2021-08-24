@@ -4,7 +4,7 @@ public class MainClass {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        DataOperation obj = new HelperClass();
+//        DataOperation obj = new HelperClass();
         Boolean bool = true;
         int option;
 
@@ -23,19 +23,19 @@ public class MainClass {
             option = sc.nextInt();
             switch (option){
                 case 1 :
-                    System.out.println(obj.storeData());
+                    System.out.println(OperatorClass.getInstance().storeData());
                     break;
                 case 2 :
-                    System.out.println(obj.showData());
+                    System.out.println(OperatorClass.getInstance().showData());
                     break;
                 case 3 :
-                    System.out.println(obj.searchData());
+                    System.out.println(OperatorClass.getInstance().searchData());
                     break;
                 case 4 :
-                    System.out.println(obj.updateData());
+                    System.out.println(OperatorClass.getInstance().updateData());
                     break;
                 case 5 :
-                    System.out.println(obj.deleteData());
+                    System.out.println(OperatorClass.getInstance().deleteData());
                     break;
                 case 6 :
                     System.exit(0);
@@ -47,6 +47,10 @@ public class MainClass {
 
             System.out.println("Do you want continue! enter \"true\" or \"false\"");
             bool = sc.nextBoolean();
+
+            if(!bool){
+                new Serialize();
+            }
 
         }
 
