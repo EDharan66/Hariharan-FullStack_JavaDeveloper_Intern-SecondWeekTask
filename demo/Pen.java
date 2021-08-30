@@ -29,12 +29,3 @@ public class Pen {
     }
 }
 
-class Bag{
-    String brand;
-    String space;
-
-    public Bag(String brand,String space) {
-        this.brand = brand;
-        this.space = space;
-    }
-}
