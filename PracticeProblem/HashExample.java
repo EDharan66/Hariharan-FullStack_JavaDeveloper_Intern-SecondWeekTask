@@ -11,6 +11,8 @@ public class HashExample {
         HashMap<String, DataInfo> info = new HashMap<>();
         HashMap searchMap = new HashMap();
         Long phone = 6383145560L;
+        long beforeExc;
+        long afterExc;
 
         try {
             FileInputStream fis = new FileInputStream("DataInfo.txt");
@@ -25,13 +27,6 @@ public class HashExample {
         System.out.println(info);
         System.out.println(info.keySet());
         System.out.println(info.values());
-        long beforeExc = System.currentTimeMillis();
-        System.out.println(Arrays.toString(info.values().parallelStream().filter(dataInfo -> dataInfo.phone.equals(phone)).toArray()));
-        long afterExc = System.currentTimeMillis();
-
-        System.out.println("beforeExc = " + beforeExc);
-        System.out.println("afterExc = " + afterExc);
-        System.out.println("timing : " + (afterExc-beforeExc));
 
         beforeExc = System.currentTimeMillis();
         System.out.println(Arrays.toString(info.values().stream().filter(dataInfo -> dataInfo.phone.equals(phone)).toArray()));
@@ -40,5 +35,13 @@ public class HashExample {
         System.out.println("beforeExc = " + beforeExc);
         System.out.println("afterExc = " + afterExc);
         System.out.println("timing : " + (afterExc-beforeExc));
+
+//        beforeExc = System.currentTimeMillis();
+//        System.out.println(Arrays.toString(info.values().parallelStream().filter(dataInfo -> dataInfo.phone.equals(phone)).toArray()));
+//        afterExc = System.currentTimeMillis();
+//
+//        System.out.println("beforeExc = " + beforeExc);
+//        System.out.println("afterExc = " + afterExc);
+//        System.out.println("timing : " + (afterExc-beforeExc));
     }
 }

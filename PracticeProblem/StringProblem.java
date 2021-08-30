@@ -2,17 +2,30 @@
 import java.util.*;
 
 
-public class StringProblem {
+public class StringProblem extends sample1 implements sample{
+
+//    static void num(){
+//        System.out.println("string problem num");
+//    }
+
+
+
+    public void s(){
+        System.out.println("helohei");
+    }
+
     public static void main(String[] args) {
 
         //isPalindrome();
         //isAnagram();
-        System.out.println(System.getProperty("os.name"));
+//        System.out.println(System.getProperty("os.name"));
 //        geeksforgeeks
 //        forgeeksgeeks
 
-
+        sample1 sp = new sample1();
+        num();
     }
+
 
     private static void isAnagram() {
         Scanner sc =  new Scanner(System.in);
@@ -53,5 +66,20 @@ public class StringProblem {
          }
         }
         System.out.println(word+ " is "+(bool?"palindrome":"not a palindrome"));
+    }
+}
+
+interface sample{
+    default void saple(){
+        System.out.println("hai");
+    }
+    default void s(){
+        System.out.println("hello");
+    }
+}
+
+class sample1{
+    static void num(){
+        System.out.println("sample1 num");
     }
 }
